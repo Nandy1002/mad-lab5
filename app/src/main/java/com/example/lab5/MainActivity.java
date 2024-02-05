@@ -2,6 +2,7 @@ package com.example.lab5;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Invalid credentials",Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(getApplicationContext(),"Welcome"+username,Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                    intent.putExtra("username",username);
+                    startActivity(intent);
                 }
             }
         });
